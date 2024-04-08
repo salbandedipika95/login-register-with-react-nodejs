@@ -4,11 +4,9 @@ import { Button, Form } from "react-bootstrap";
 import "./login.css";
 
 const Login = () => {
-  // const [form, setForm] = useState({});
-  // const [users, setUsers] = useState({});
-  const [username, setUname] = useState('');
-  const [password, setPass] = useState('');
-  const[error,setError]=useState('');
+  const [users, setUsers] = useState({});
+  const [uname, setUname] = useState('');
+  const [pass, setPass] = useState('');
 
   const handleUsername = (e) => {
     setUname(e.target.value);
@@ -19,20 +17,20 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); //use to stop to rediret to another page as react is SPA
-    // const response = await fetch("http://localhost:8080/demo", {
-    //   method: "GET",
-    // });
-    try{
     const response = await fetch("http://localhost:8080/demo", {
-      username,
-      password
+      method: "GET",
     });
-    alert('Login successful:',response.data);
-  }catch(err){
-    alert('login failed:', err.response.data);
-    setError(err.response.data.message);
-    
-  }
+  const data = await response.json();
+    setUsers(data);
+    console.log(uname);
+    console.log(pass);
+    if(uname===users.username && pass===users.password)
+    {
+      alert('Login Successful');
+    }
+    else{
+      alert('Invalid Credentials');
+    }
   }
 
   return (
