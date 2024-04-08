@@ -1,0 +1,23 @@
+.navb{
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgb(35, 35, 64);
+}
+.list{
+  /* background-color: red; */
+  padding: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.list li{
+  font-size: 15px;
+  padding: 0px 15px;
+}
+
+.link{
+  color:white;
+}

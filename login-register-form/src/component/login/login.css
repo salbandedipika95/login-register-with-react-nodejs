@@ -1,0 +1,40 @@
+.custom-form {
+  width: 400px;
+  padding: 30px 60px;
+}
+.custom-form .btn {
+font-weight: 600;
+  padding: 8px;
+  width: 100%;
+  color: black;
+  background-color: rgb(99, 190, 193);
+}
+.custom-form .btn:hover {
+  color: black;
+  background-color: rgb(110, 210, 214);
+}
+.container {
+  position: relative;
+  border-radius: 6px;
+  padding: 40px 0px 0px 0px;
+  background-color: rgb(35, 35, 64);
+}
+.container .log {
+  position: absolute;
+  border-radius: 4px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  left: 130px;
+  top: -10px;
+  background-color: rgb(99, 190, 193);
+}
+.form-control {
+  margin-bottom: 1.5rem;
+}
+.form-control[type] {
+  padding: 8px;
+  background-color: rgb(80, 80, 111);
+  border: none;
+  font-size: larger;
+}
