@@ -36,18 +36,6 @@ server.post('/demo',async (req,res)=>{
   user.password=req.body.password;
   const doc = await user.save();
 
-  const usern =await User.findOne({username});
-  if(!user){
-    return res.status(404).json({message:'user not found'});
-  }
-
-  const validpass= await bcrypt.compare(password, user.password);
-  if(!validpass){
-    return res.status(401).json({message:'invalid pass'});
-  }
-
-   res.json({message:'successful'});
-
   console.log(doc);
   res.json(doc);
 })
