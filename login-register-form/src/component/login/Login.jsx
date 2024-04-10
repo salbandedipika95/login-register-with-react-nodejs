@@ -16,21 +16,23 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); //use to stop to rediret to another page as react is SPA
+    e.preventDefault(); 
     const response = await fetch("http://localhost:8080/demo", {
       method: "GET",
     });
   const data = await response.json();
     setUsers(data);
-    console.log(uname);
-    console.log(pass);
-    if(uname===users.username && pass===users.password)
-    {
-      alert('Login Successful');
+    let j;
+    let i;
+    for (i = 0; i < users.length; i++) {
+      if ( uname==users[i].username && pass==users[i].password) {
+        j = 1;
+        break;
+      }
     }
-    else{
-      alert('Invalid Credentials');
-    }
+    if (j == 1) alert("Login successfully");
+    else alert("Invalid credentials");
+   
   }
 
   return (
